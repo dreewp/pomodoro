@@ -1,24 +1,22 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import './App.scss';
+import Controls from './components/Controls';
+import Session from './components/Session';
 
 function App() {
+  const [sessionTime, setSessionTime] = useState(25);
+  const [breakTime, setBreakTime] = useState(5);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div id="App">
+      <h1>Pomodoro Clock 🍅</h1>
+      <Controls
+        sessionTime={sessionTime}
+        setSessionTime={setSessionTime}
+        breakTime={breakTime}
+        setBreakTime={setBreakTime}
+      />
+      <Session sessionTime={sessionTime} breakTime={breakTime} />
     </div>
   );
 }
