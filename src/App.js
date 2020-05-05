@@ -9,7 +9,7 @@ function App() {
 
   return (
     <div id="App">
-      <h1>Pomodoro Clock 🍅</h1>
+      <h1>Pomodoro Timer 🍅</h1>
       <Controls
         sessionTime={sessionTime}
         setSessionTime={setSessionTime}
